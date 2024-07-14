@@ -18,10 +18,7 @@ const io = new Server(server, {
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect(process.env.MONGODB_CONNECTION_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+mongoose.connect(process.env.MONGODB_CONNECTION_URL);
 
 const dishSchema = new mongoose.Schema({
   dishId: String,
