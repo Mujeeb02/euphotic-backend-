@@ -22,7 +22,7 @@ mongoose.connect(process.env.MONGODB_CONNECTION_URL)
   .then(() => console.log('MongoDB connected'))
   .catch((err) => {
     console.error('MongoDB connection error:', err.message);
-    process.exit(1);  // Exit the process with an error
+    process.exit(1);  
   });
 
 const dishSchema = new mongoose.Schema({
