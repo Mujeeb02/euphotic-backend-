@@ -3,6 +3,9 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const http = require('http');
 const { Server } = require('socket.io');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
@@ -15,7 +18,7 @@ const io = new Server(server, {
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect('mongodb+srv://Mujeeb:Mujeeb****@dishdashboard.8fjtrnj.mongodb.net/?retryWrites=true&w=majority&appName=DishDashboard', {
+mongoose.connect(process.env.MONGODB_CONNECTION_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
